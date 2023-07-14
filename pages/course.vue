@@ -1,6 +1,6 @@
 <template>
     <section class="text-4xl text-center mb-12 text-lime-300">
-        <h1><b>Mastering Nuxt</b></h1>
+        <h1><b>{{ title }}</b></h1>
     </section>
     <section class="grid grid-flow-col grid-cols-[1fr_3fr] gap-x-8">
         <div class="bg-slate-700 p-8 rounded-2xl min-w-[20ch]">
@@ -20,5 +20,5 @@
 </template>
 
 <script setup>
-const { chapters } = useCourse(); 
+const { chapters, title } = useCourse();
 </script>
