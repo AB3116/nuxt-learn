@@ -1,6 +1,7 @@
 <template>
-    <section class="text-4xl text-center mb-12 text-lime-300">
+    <section class="text-4xl mb-12 text-lime-300 flex items-center justify-between h-[96px]">
         <h1><b>{{ title }}</b></h1>
+        <UserCard />
     </section>
     <section class="grid grid-flow-col grid-cols-[1fr_3fr] gap-x-8">
         <div class="bg-slate-700 p-8 rounded-2xl min-w-[20ch]">
