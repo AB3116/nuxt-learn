@@ -1,10 +1,24 @@
 <script setup>
 const { title } = useCourse();
-
+const { query } = useRoute();
 const supabase = useSupabaseClient()
+const user = useSupabaseUser();
+
+watchEffect(async () => {
+    if (user.value) {
+        await navigateTo(query.redirectTo, {
+            replace: true,
+        })
+    }
+})
+
 const login = async () => {
+    const redirectTo = `${window.location.origin}${query.redirectTo}`
     const { error } = await supabase.auth.signInWithOAuth({
         provider: 'github',
+        options: {
+            redirectTo: redirectTo,
+        }
     })
 
     if (error) {
