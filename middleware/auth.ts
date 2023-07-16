@@ -1,4 +1,5 @@
 export default defineNuxtRouteMiddleware((to, from) => {
-    if (to.params.chapterSlug === 'work-and-study') return;
+    const user = useSupabaseUser();
+    if (to.params.chapterSlug === 'work-and-study' || user.value) return;
     return navigateTo('/login')
 })

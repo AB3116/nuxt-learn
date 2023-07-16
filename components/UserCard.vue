@@ -2,6 +2,7 @@
 const user = useSupabaseUser();
 const name = computed(() => user.value.user_metadata.user_name)
 const profile = computed(() => user.value.user_metadata.avatar_url)
+const firstLesson = useFirstLesson();
 
 const supabase = useSupabaseClient()
 const logout = async () => {
@@ -10,6 +11,8 @@ const logout = async () => {
     if (error) {
         console.error(error)
     }
+
+    await navigateTo(firstLesson.path)
 }
 </script>
 
