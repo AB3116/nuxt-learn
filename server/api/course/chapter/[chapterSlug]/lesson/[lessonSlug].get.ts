@@ -1,6 +1,5 @@
 import courseData from '~/server/courseData'
 import { Lesson, LessonWithPath, Chapter, Course } from '~/types/course'
-
 courseData as Course;
 
 export default defineEventHandler((event): LessonWithPath => {
